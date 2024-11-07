@@ -1,0 +1,35 @@
+.creative-title {
+  font-size: 3em;
+}
+
+.text-outline {
+  color: white;
+  text-shadow: 1px 0 0 black,
+  -1px 0 0 black,
+  0 1px 0 black,
+  0 -1px 0 black,
+  1px 1px 0 black,
+  -1px 1px 0 black,
+  1px -1px 0 black,
+  -1px -1px 0 black;
+}
+
+svg {
+  font: bold 2em Sora;
+  width: 100%;
+  height: 120px;
+}
+
+svg > text {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+}
+.simple {
+  font-weight: 300;
+}
+
+.strong {
+  font-weight: 800;
+}

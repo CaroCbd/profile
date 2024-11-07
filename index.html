@@ -1,98 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caroline Cerbelaud's profile</title>
-  <meta name="description"
-    content="Future junior Full Stack developer working from Rennes for innovative companies. Python, Ruby, HTML, CSS, Javascript">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
-  <link rel="stylesheet" href="style.css">
+  <title>Caroline Cerbelaud Profile page - Back-end developer</title>
+  <!-- TailWind CSS Framework-->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <!-- https://icones.js.org/collection/mdi -->
+
+  <!-- CSS stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Importmap -->
+  <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+  </script>
 </head>
-
 <body>
-  <div id="intro-section">
-    <div class="sub-div-100">
-      <div class="sub-div-20">
-        <img id="profile-pic" src="images/profile.png">
+
+<!-- Top Navigation bar -->
+
+<!-- NAV BAR USING TAILWING LOOPS -->
+ <!-- <nav nav-bar-centered="flex sm:justify-center space-x-4">
+  <a href="#" class="nav-item font-bold">Caroline Cerbelaud</a>
+  {[
+  ['About me', '#'],
+  ['Skills', '#'],
+  ['Project', '#'],
+  ['Contact me', '#'],
+  ].map(([title, url]) => (
+  <a href={url}
+    className="flex space-x-4 content-center items-center justify-center">{title}</a>
+  ))}
+  <a href="" class="download-black rounded-md bg-black text-white	p-2">
+    <span class="icon-[mdi--tray-download]"></span>
+    <p>Download Resume</p>
+  </a>
+</nav> -->
+
+<nav class="flex content-center items-center justify-between px-6 py-3">
+  <a href="#" class="nav-item font-bold">Caroline Cerbelaud</a>
+  <div class="flex space-x-4 content-center items-center justify-center">
+    <a href="" class="nav-item">About me</a>
+    <a href="" class="nav-item">Skills</a>
+    <a href="" class="nav-item">Project</a>
+    <a href="" class="nav-item">Contact me</a>
+  </div>
+  <a href="" class="download-black rounded-md bg-black text-white	p-2">
+    <span class="icon-[mdi--tray-download]"></span>
+    <p>Download Resume</p>
+  </a>
+</nav>
+
+
+<!-- Content -->
+<main>
+
+<!-- Hero Banner -->
+<div class="section white-section p-3 flex flex-row">
+  <div class="w-1/2">
+      <div class="creative-title flex flex-col gap-4">
+        <div class="title-line flex flex-row gap-2">
+          <p class="text-outline">Hello,</p>
+        </div>
+        <div class="title-line flex flex-row gap-2">
+          <p class="simple">I'm </p>
+          <p class="strong"> Caroline Cerbelaud</p>
+        </div>
+        <div class="title-line flex flex-row gap-2">
+          <p class="strong">Backend </p>
+          <p class="text-outline"> developer.</p>
+
+        </div>
+        <div class="title-line flex flex-row gap-2">
+          <p class="simple">Based in </p>
+          <p class="strong"> Rennes</p>
+        </div>
       </div>
-      <div class="sub-div-80">
-        <h1>Caroline Cerbelaud</h1>
-        <h2>Student at Le Wagon Rennes</h2>
-        <p>Ex-product builder and operations manager for AI Chatbots, currenlty learning to become a <strong>Full Stack
-            developer</strong> with Le Wagon in Rennes</p>
-        <button> <a href="https://www.linkedin.com/in/carolinecerbelaud/">View my LinkedIn Profile ℹ️</a></button>
+      <div class="description">
+        <p></p>
+      </div>
+      <div class="social-media-icons">
+        <button class="social-media-icon">LinkedIn</button>
+        <button class="social-media-icon">GitHub</button>
+        <button class="social-media-icon">Notion</button>
+      </div>
+  </div>
+  <div class="w-1/2">
+    <img src="file:///Users/carolinecerbelaud/code/CaroCbd/profile/images/girl%20banner%201.png" alt="" class="hero-banner-right">
+  </div>
+</div>
+
+<!-- Skills -->
+<!-- https://icones.js.org/collection/devicon-plain -->
+
+<div class="section white-section">
+  <div class="section-title">
+    <h2>My <strong>Skills</strong></h2>
+  </div>
+  <div id="skills" v-for="(skill) in skills"class="skills-grid grid grid-cols-4 gap-4 justify-items-center content-center items-stretch place-content-stretch">
+      <div class="skill-card" v-cloak>
+        <img src="{{ skill.icon_path }}" alt="{{ skill.name }} logo">
+        <p>{{ skill.name }}</p>
+      </div>
+  </div>
+</div>
+
+<!-- Experience -->
+
+<div class="section black-section">
+  <div class="section-title">
+    <h2>My <strong>Experiences</strong></h2>
+  </div>
+
+  <!-- Le Wagon Bootcamp -->
+  <div class="expe-card">
+    <div class="expe-heading">
+      <h3>Bootcamp at Le Wagon</h3>
+      <div class="expe-logo">
+        <img src="" alt="">
+      </div>
+    </div>
+    <div class="expe-dates">
+      <p>
+
+      </p>
+    </div>
+    <div class="expe-desc">
+      <p>
+      </p>
+    </div>
+  </div>
+
+  <!-- ViaSay -->
+  <div class="expe-card">
+    <div class="expe-heading">
+      <h3>Head of Operations at ViaSay</h3>
+      <div class="expe-logo">
+        <img src="" alt="">
+      </div>
+    </div>
+    <div class="expe-dates">
+      <p>
+
+      </p>
+    </div>
+    <div class="expe-desc">
+      <p>
+      </p>
+    </div>
+  </div>
+
+  <!-- Laiye -->
+  <div class="expe-card">
+    <div class="expe-heading">
+      <h3>From Head of Professional Services to Head of Operations at Laiye</h3>
+      <div class="expe-logo">
+        <img src="" alt="">
+      </div>
+    </div>
+    <div class="expe-dates">
+      <p>
+
+      </p>
+    </div>
+    <div class="expe-desc">
+      <p>
+      </p>
+    </div>
+  </div>
+
+  <!-- Mindsay -->
+  <div class="expe-card">
+    <div class="expe-heading">
+      <h3>From Product Builder to Head of Professional Services at Mindsay</h3>
+      <div class="expe-logo">
+        <img src="" alt="">
+      </div>
+    </div>
+    <div class="expe-dates">
+      <p>
+
+      </p>
+    </div>
+    <div class="expe-desc">
+      <p>
+      </p>
+    </div>
+  </div>
+
+  <!-- Kameleoon -->
+  <div class="expe-card">
+    <div class="expe-heading">
+      <h3>From CRO Consultant to Production Manager at Kameleoon</h3>
+      <div class="expe-logo">
+        <img src="" alt="">
+      </div>
+    </div>
+    <div class="expe-dates">
+      <p>
+
+      </p>
+    </div>
+    <div class="expe-desc">
+      <p>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- About me -->
+<div class="section white-section">
+  <div class="big-image">
+    <img src="" alt="">
+  </div>
+  <div class="right-content">
+    <div class="section-title">
+      <h2>About Me</h2>
+    </div>
+    <div class="simple-text">
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<!-- My projects -->
+<div class="section black-section">
+  <div class="section-title">
+    <h2>My <strong>Projects</strong></h2>
+  </div>
+
+  <!-- Projet fin d'étude - LEFT -->
+  <div class="project-card-left">
+    <div class="img-left">
+      <img src="" alt="">
+    </div>
+    <div class="text-right">
+      <div class="big-text-white">
+        <p></p>
+      </div>
+      <div class="title-white">
+        <h3>Projet fin d'études</h3>
+      </div>
+      <div class="grey-text">
+        <p></p>
+      </div>
+      <button class="see-more">
+        <p>Preview</p>
+      </button>
+      <button class="go-to-source">
+        <p>GitHub</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Clone Airbnb - RIGHT -->
+  <div class="project-card-right">
+    <div class="img-right">
+      <img src="" alt="">
+    </div>
+    <div class="text-left">
+      <div class="big-text-white">
+        <p></p>
+      </div>
+      <div class="title-white">
+        <h3>Clone Airbnb</h3>
+      </div>
+      <div class="grey-text">
+        <p></p>
+      </div>
+      <button class="see-more">
+        <p>Preview</p>
+      </button>
+      <button class="go-to-source">
+        <p>GitHub</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Autre - LEFT -->
+  <div class="project-card-left">
+    <div class="img-left">
+      <img src="" alt="">
+    </div>
+    <div class="text-right">
+      <div class="big-text-white">
+        <p></p>
+      </div>
+      <div class="title-white">
+        <h3>Autre</h3>
+      </div>
+      <div class="grey-text">
+        <p></p>
+      </div>
+      <button class="see-more">
+        <p>Preview</p>
+      </button>
+      <button class="go-to-source">
+        <p>GitHub</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Notion Creator - RIGHT -->
+  <div class="project-card-right">
+    <div class="img-right">
+      <img src="" alt="">
+    </div>
+    <div class="text-left">
+      <div class="big-text-white">
+        <p></p>
+      </div>
+      <div class="title-white">
+        <h3>Notion Creator</h3>
+      </div>
+      <div class="grey-text">
+        <p></p>
+      </div>
+      <button class="see-more">
+        <p>Preview</p>
+      </button>
+      <button class="go-to-source">
+        <p>Notion</p>
+      </button>
+    </div>
+  </div>
+
+  <div class="section white-section">
+    <div class="section-title">
+      <h2>My <strong>Testimonials</strong></h2>
+    </div>
+    <div class="flex">
+      <div class="card white-card">
+        <div class="avatar">
+          <img src="" alt="">
+        </div>
+        <p>Testimonial</p>
+        <p class="author">Michel</p>
+        <p class="role">Designer</p>
       </div>
     </div>
   </div>
 
-  <div class="sub-div-100">
-    <div class="div-content">
-      <h2>My hobbies</h2>
-      <h3>Cooking</h3>
-      <p>Love cooking Brittany organic products</p>
-      <h3>Gardening</h3>
-      <p>Grow Rosemary, Strawberries, Lavender, Cilantro and Basil</p>
-      <h3>Coding</h3>
-      <p>Learn No-code and Code to build great user experiences :</p>
-      <ul>
-        <li><i class="fa-brands fa-html5"></i> HTML</li>
-        <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
-        <li><i class="fa-brands fa-js"></i> JavaScript</li>
-        <li><i class="fa-solid fa-user-ninja"></i> Jinja</li>
-        <li><i class="fa-brands fa-python"></i> Python</li>
-        <li><i class="fa-regular fa-gem"></i> Ruby</li>
-      </ul>
+  <div class="section black-section">
+    <div class="form left">
+
     </div>
-  </div>
-  <div class="sub-div-100">
-    <div class="div-content">
-      <h2>Follow me on my social media</h2>
-      <div class="social-media-icons">
-          <a href="https://www.linkedin.com/in/carolinecerbelaud/" target="blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-              <circle cx="4" cy="4" r="2" fill="#5f6f52" fill-opacity="0">
-                <animate fill="freeze" attributeName="fill-opacity" dur="0.15s" values="0;1" />
-              </circle>
-              <g fill="none" stroke="#5f6f52" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-                <path stroke-dasharray="12" stroke-dashoffset="12" d="M4 10v10">
-                  <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.15s" dur="0.2s" values="12;0" />
-                </path>
-                <path stroke-dasharray="12" stroke-dashoffset="12" d="M10 10v10">
-                  <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.45s" dur="0.2s" values="12;0" />
-                </path>
-                <path stroke-dasharray="24" stroke-dashoffset="24" d="M10 15c0 -2.76 2.24 -5 5 -5c2.76 0 5 2.24 5 5v5">
-                  <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.65s" dur="0.2s" values="24;0" />
-                </path>
-              </g>
-            </svg>
-      </div>
-      <div class="social-media-icons">
-          <a href="https://www.instagram.com/caro_et_ses_couteaux/" target="blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-              <circle cx="17" cy="7" r="1.5" fill="#5f6f52" fill-opacity="0">
-                <animate fill="freeze" attributeName="fill-opacity" begin="1.3s" dur="0.15s" values="0;1" />
-              </circle>
-              <g fill="none" stroke="#5f6f52" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                <path stroke-dasharray="72" stroke-dashoffset="72"
-                  d="M16 3c2.76 0 5 2.24 5 5v8c0 2.76 -2.24 5 -5 5h-8c-2.76 0 -5 -2.24 -5 -5v-8c0 -2.76 2.24 -5 5 -5h4Z">
-                  <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="72;0" />
-                </path>
-                <path stroke-dasharray="28" stroke-dashoffset="28"
-                  d="M12 8c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4">
-                  <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.6s" values="28;0" />
-                </path>
-              </g>
-            </svg>
-          </a>
-      </div>
+    <div class="title-section">
+      Let's connect and work together
     </div>
+    <p></p>
   </div>
+
+</div>
+
+<!-- Import your own javascript -->
+<script src="javascript/skills.js" type="module"></script>
+
+</main>
+
+<footer class="section black-section flex">
+  <div class="avatar">
+    <img src="" alt="">
+  </div>
+  <div class="credits">
+    Created by <a href=""></a>
+    Design by <a href="https://www.figma.com/@jhanvishah">Jhanvi Shah</a>
+  </div>
+
+</footer>
+
+
 </body>
 </html>

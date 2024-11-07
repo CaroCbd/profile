@@ -1,0 +1,13 @@
+.skill-card{
+  aspect-ratio: 1/1;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: auto 0;
+}
+
+.skill-card > span{
+  font-size: 1em;
+}

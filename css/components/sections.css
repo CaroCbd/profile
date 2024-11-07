@@ -1,0 +1,29 @@
+div{
+  border: 1px solid red;
+}
+
+.section {
+  width: 100%;
+  padding: 3em;
+  margin: 0 auto;
+}
+
+.white-section{
+  background-color: white;
+  color:black;
+}
+
+.black-section {
+  background-color: black;
+  color: white;
+}
+
+.section-title {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 300;
+}
+
+.section-title strong {
+  font-weight: 800;
+}
