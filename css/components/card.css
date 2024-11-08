@@ -1,13 +1,14 @@
-.skill-card{
-  aspect-ratio: 1/1;
+.skill-card {
+  font-size: 3em;
   text-align: center;
-  vertical-align: middle;
-  display: flex;
-  flex-direction: column;
+  color: black;
+  font-size: 3em;
   border: 2px solid black;
-  margin: auto 0;
+  border-radius: 4px;
+  aspect-ratio: 1/1;
+  padding: 1em;
 }
 
-.skill-card > span{
-  font-size: 1em;
+.skill-card>p {
+  font-size: medium;
 }

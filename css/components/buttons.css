@@ -1,0 +1,12 @@
+.button-black{
+  background-color: black;
+  border-radius: 5px;
+  color:white;
+  padding: 1em;
+  transition: ease 0.5s;
+}
+
+.button-black:hover{
+  background-color: #404040;
+  transition: ease 0.5s;
+}

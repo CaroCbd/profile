@@ -13,9 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-  <!-- https://icones.js.org/collection/mdi -->
+
 
   <!-- CSS stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -31,358 +31,301 @@
 </head>
 <body>
 
-<!-- Top Navigation bar -->
+  <!-- Top Navigation bar -->
 
-<!-- NAV BAR USING TAILWING LOOPS -->
- <!-- <nav nav-bar-centered="flex sm:justify-center space-x-4">
-  <a href="#" class="nav-item font-bold">Caroline Cerbelaud</a>
-  {[
-  ['About me', '#'],
-  ['Skills', '#'],
-  ['Project', '#'],
-  ['Contact me', '#'],
-  ].map(([title, url]) => (
-  <a href={url}
-    className="flex space-x-4 content-center items-center justify-center">{title}</a>
-  ))}
-  <a href="" class="download-black rounded-md bg-black text-white	p-2">
-    <span class="icon-[mdi--tray-download]"></span>
-    <p>Download Resume</p>
-  </a>
-</nav> -->
-
-<nav class="flex content-center items-center justify-between px-6 py-3">
-  <a href="#" class="nav-item font-bold">Caroline Cerbelaud</a>
-  <div class="flex space-x-4 content-center items-center justify-center">
-    <a href="" class="nav-item">About me</a>
-    <a href="" class="nav-item">Skills</a>
-    <a href="" class="nav-item">Project</a>
-    <a href="" class="nav-item">Contact me</a>
-  </div>
-  <a href="" class="download-black rounded-md bg-black text-white	p-2">
-    <span class="icon-[mdi--tray-download]"></span>
-    <p>Download Resume</p>
-  </a>
-</nav>
+  <nav class="flex content-center items-center justify-between px-6 py-3">
+    <a href="#" class="nav-item font-bold">Caroline Cerbelaud</a>
+    <div class="flex space-x-4 content-center items-center justify-center">
+      <a href="" class="nav-item">About me</a>
+      <a href="" class="nav-item">Skills</a>
+      <a href="" class="nav-item">Project</a>
+      <a href="" class="nav-item">Contact me</a>
+    </div>
+    <button class="button-black flex flex-row content-center items-center justify-center gap-2" >
+      <p>Download Resume</p>
+      <i class="fa-regular fa-circle-down"></i>
+    </button>
+  </nav>
 
 
-<!-- Content -->
-<main>
+  <!-- Content -->
+  <main>
 
-<!-- Hero Banner -->
-<div class="section white-section p-3 flex flex-row">
-  <div class="w-1/2">
-      <div class="creative-title flex flex-col gap-4">
-        <div class="title-line flex flex-row gap-2">
-          <p class="text-outline">Hello,</p>
+  <!-- Hero Banner -->
+  <div class="section white-section p-3 flex flex-row">
+    <div class="w-1/2">
+        <div class="creative-title flex flex-col gap-4">
+          <div class="title-line flex flex-row gap-2">
+            <p class="text-outline">Hello,</p>
+          </div>
+          <div class="title-line flex flex-row gap-2">
+            <p class="simple">I'm </p>
+            <p class="strong"> Caroline Cerbelaud</p>
+          </div>
+          <div class="title-line flex flex-row gap-2">
+            <p class="strong">Backend </p>
+            <p class="text-outline"> developer.</p>
+
+          </div>
+          <div class="title-line flex flex-row gap-2">
+            <p class="simple">Based in </p>
+            <p class="strong"> Rennes</p>
+          </div>
         </div>
-        <div class="title-line flex flex-row gap-2">
-          <p class="simple">I'm </p>
-          <p class="strong"> Caroline Cerbelaud</p>
+        <div class="description">
+          <p></p>
         </div>
-        <div class="title-line flex flex-row gap-2">
-          <p class="strong">Backend </p>
-          <p class="text-outline"> developer.</p>
-
+        <div class="social-media-icons">
+          <button class="social-media-icon">LinkedIn</button>
+          <button class="social-media-icon">GitHub</button>
+          <button class="social-media-icon">Notion</button>
         </div>
-        <div class="title-line flex flex-row gap-2">
-          <p class="simple">Based in </p>
-          <p class="strong"> Rennes</p>
-        </div>
-      </div>
-      <div class="description">
-        <p></p>
-      </div>
-      <div class="social-media-icons">
-        <button class="social-media-icon">LinkedIn</button>
-        <button class="social-media-icon">GitHub</button>
-        <button class="social-media-icon">Notion</button>
-      </div>
-  </div>
-  <div class="w-1/2">
-    <img src="file:///Users/carolinecerbelaud/code/CaroCbd/profile/images/girl%20banner%201.png" alt="" class="hero-banner-right">
-  </div>
-</div>
-
-<!-- Skills -->
-<!-- https://icones.js.org/collection/devicon-plain -->
-
-<div class="section white-section">
-  <div class="section-title">
-    <h2>My <strong>Skills</strong></h2>
-  </div>
-  <div id="skills" v-for="(skill) in skills"class="skills-grid grid grid-cols-4 gap-4 justify-items-center content-center items-stretch place-content-stretch">
-      <div class="skill-card" v-cloak>
-        <img src="{{ skill.icon_path }}" alt="{{ skill.name }} logo">
-        <p>{{ skill.name }}</p>
-      </div>
-  </div>
-</div>
-
-<!-- Experience -->
-
-<div class="section black-section">
-  <div class="section-title">
-    <h2>My <strong>Experiences</strong></h2>
-  </div>
-
-  <!-- Le Wagon Bootcamp -->
-  <div class="expe-card">
-    <div class="expe-heading">
-      <h3>Bootcamp at Le Wagon</h3>
-      <div class="expe-logo">
-        <img src="" alt="">
-      </div>
     </div>
-    <div class="expe-dates">
-      <p>
-
-      </p>
-    </div>
-    <div class="expe-desc">
-      <p>
-      </p>
+    <div class="w-1/2">
+      <img src="file:///Users/carolinecerbelaud/code/CaroCbd/profile/images/girl%20banner%201.png" alt="" class="hero-banner-right">
     </div>
   </div>
 
-  <!-- ViaSay -->
-  <div class="expe-card">
-    <div class="expe-heading">
-      <h3>Head of Operations at ViaSay</h3>
-      <div class="expe-logo">
-        <img src="" alt="">
-      </div>
-    </div>
-    <div class="expe-dates">
-      <p>
-
-      </p>
-    </div>
-    <div class="expe-desc">
-      <p>
-      </p>
-    </div>
-  </div>
-
-  <!-- Laiye -->
-  <div class="expe-card">
-    <div class="expe-heading">
-      <h3>From Head of Professional Services to Head of Operations at Laiye</h3>
-      <div class="expe-logo">
-        <img src="" alt="">
-      </div>
-    </div>
-    <div class="expe-dates">
-      <p>
-
-      </p>
-    </div>
-    <div class="expe-desc">
-      <p>
-      </p>
-    </div>
-  </div>
-
-  <!-- Mindsay -->
-  <div class="expe-card">
-    <div class="expe-heading">
-      <h3>From Product Builder to Head of Professional Services at Mindsay</h3>
-      <div class="expe-logo">
-        <img src="" alt="">
-      </div>
-    </div>
-    <div class="expe-dates">
-      <p>
-
-      </p>
-    </div>
-    <div class="expe-desc">
-      <p>
-      </p>
-    </div>
-  </div>
-
-  <!-- Kameleoon -->
-  <div class="expe-card">
-    <div class="expe-heading">
-      <h3>From CRO Consultant to Production Manager at Kameleoon</h3>
-      <div class="expe-logo">
-        <img src="" alt="">
-      </div>
-    </div>
-    <div class="expe-dates">
-      <p>
-
-      </p>
-    </div>
-    <div class="expe-desc">
-      <p>
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- About me -->
-<div class="section white-section">
-  <div class="big-image">
-    <img src="" alt="">
-  </div>
-  <div class="right-content">
-    <div class="section-title">
-      <h2>About Me</h2>
-    </div>
-    <div class="simple-text">
-      <p></p>
-    </div>
-  </div>
-</div>
-
-<!-- My projects -->
-<div class="section black-section">
-  <div class="section-title">
-    <h2>My <strong>Projects</strong></h2>
-  </div>
-
-  <!-- Projet fin d'étude - LEFT -->
-  <div class="project-card-left">
-    <div class="img-left">
-      <img src="" alt="">
-    </div>
-    <div class="text-right">
-      <div class="big-text-white">
-        <p></p>
-      </div>
-      <div class="title-white">
-        <h3>Projet fin d'études</h3>
-      </div>
-      <div class="grey-text">
-        <p></p>
-      </div>
-      <button class="see-more">
-        <p>Preview</p>
-      </button>
-      <button class="go-to-source">
-        <p>GitHub</p>
-      </button>
-    </div>
-  </div>
-
-  <!-- Clone Airbnb - RIGHT -->
-  <div class="project-card-right">
-    <div class="img-right">
-      <img src="" alt="">
-    </div>
-    <div class="text-left">
-      <div class="big-text-white">
-        <p></p>
-      </div>
-      <div class="title-white">
-        <h3>Clone Airbnb</h3>
-      </div>
-      <div class="grey-text">
-        <p></p>
-      </div>
-      <button class="see-more">
-        <p>Preview</p>
-      </button>
-      <button class="go-to-source">
-        <p>GitHub</p>
-      </button>
-    </div>
-  </div>
-
-  <!-- Autre - LEFT -->
-  <div class="project-card-left">
-    <div class="img-left">
-      <img src="" alt="">
-    </div>
-    <div class="text-right">
-      <div class="big-text-white">
-        <p></p>
-      </div>
-      <div class="title-white">
-        <h3>Autre</h3>
-      </div>
-      <div class="grey-text">
-        <p></p>
-      </div>
-      <button class="see-more">
-        <p>Preview</p>
-      </button>
-      <button class="go-to-source">
-        <p>GitHub</p>
-      </button>
-    </div>
-  </div>
-
-  <!-- Notion Creator - RIGHT -->
-  <div class="project-card-right">
-    <div class="img-right">
-      <img src="" alt="">
-    </div>
-    <div class="text-left">
-      <div class="big-text-white">
-        <p></p>
-      </div>
-      <div class="title-white">
-        <h3>Notion Creator</h3>
-      </div>
-      <div class="grey-text">
-        <p></p>
-      </div>
-      <button class="see-more">
-        <p>Preview</p>
-      </button>
-      <button class="go-to-source">
-        <p>Notion</p>
-      </button>
-    </div>
-  </div>
+  <!-- Skills -->
+  <!-- https://icones.js.org/collection/devicon-plain -->
 
   <div class="section white-section">
     <div class="section-title">
-      <h2>My <strong>Testimonials</strong></h2>
+      <h2>My <strong>Skills</strong></h2>
     </div>
-    <div class="flex">
-      <div class="card white-card">
-        <div class="avatar">
-          <img src="" alt="">
+    <!-- Vue.JS div -->
+    <div id="skills" v-for="skill in skills" class="skills-grid grid grid-cols-4 gap-4 justify-items-center content-center items-stretch place-content-stretch">
+        <div class="skill-card" v-cloak>
+          <!-- <img src="{{ skill.icon_path }}" alt="{{ skill.name }} logo"> -->
+          <p>{{ skill.name }}</p>
         </div>
-        <p>Testimonial</p>
-        <p class="author">Michel</p>
-        <p class="role">Designer</p>
+    </div>
+    <!-- <div id="skills" class="grid grid-cols-5 gap-20">
+      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </div>
+      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </div>
+      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </div>
+      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </div>
+      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </div>
+      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </div>
+      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </div>
+      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
+        <i class="fa-brands fa-github"></i>
+        <p>GitHub</p>
+      </div>
+    </div>
+ -->
+  </div>
+
+  <!-- Experience -->
+
+  <div class="section black-section">
+    <div class="section-title">
+      <h2>My <strong>Experiences</strong></h2>
+    </div>
+    <!-- Vue.JS div -->
+    <!-- <div id="experiences" v-for="(experience) in experience"class="experience-list">
+            <div class="expe-card" v-cloak>
+              <img src="{{ expe.icon_path }}" alt="{{ expe.name }} logo">
+              <h2>{{ expe.job_title }}</h2>
+              <p>{{ expe.date_start }}</p>
+              <p>{{ expe.date_end }}</p>
+              <p>{{ expe.job_description }}</p>
+            </div>
+    </div> -->
+
+    <!-- Le Wagon Bootcamp -->
+    <div class="expe-card" v-cloak>
+      <img src=".images/lewagonlogo.png" alt="Le Wagon Bootcamp logo">
+      <h2><span>Le Wagon</span>Bootcamp Développeur fullstack </h2>
+      <p>Octobre 2024</p>
+      <p>Décembre 2024</p>
+      <p>Instensive 9 weeks of bootcamp to learn fullstack developement</p>
+    </div>
+  </div>
+
+  <!-- About me -->
+  <div class="section white-section">
+    <div class="big-image">
+      <img src="" alt="">
+    </div>
+    <div class="right-content">
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+      <div class="simple-text">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia alias odio vero dolorum corporis rerum! Aperiam fugit id, minus in debitis nulla voluptates modi cumque porro, fuga, facere quidem sed.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia alias odio vero dolorum corporis rerum! Aperiam fugit id,
+        minus in debitis nulla voluptates modi cumque porro, fuga, facere quidem sed. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia alias odio vero dolorum corporis rerum! Aperiam fugit id,
+        minus in debitis nulla voluptates modi cumque porro, fuga, facere quidem sed.</p>
       </div>
     </div>
   </div>
 
+  <!-- My projects -->
   <div class="section black-section">
-    <div class="form left">
+    <div class="section-title">
+      <h2>My <strong>Projects</strong></h2>
+    </div>
 
+    <!-- Projet fin d'étude - LEFT -->
+    <div class="project-card-left">
+      <div class="img-left">
+        <img src="" alt="">
+      </div>
+      <div class="text-right">
+        <div class="big-text-white">
+          <p></p>
+        </div>
+        <div class="title-white">
+          <h3>Projet fin d'études</h3>
+        </div>
+        <div class="grey-text">
+          <p></p>
+        </div>
+        <button class="see-more">
+          <p>Preview</p>
+        </button>
+        <button class="go-to-source">
+          <p>GitHub</p>
+        </button>
+      </div>
     </div>
-    <div class="title-section">
-      Let's connect and work together
+
+    <!-- Clone Airbnb - RIGHT -->
+    <div class="project-card-right">
+      <div class="img-right">
+        <img src="" alt="">
+      </div>
+      <div class="text-left">
+        <div class="big-text-white">
+          <p></p>
+        </div>
+        <div class="title-white">
+          <h3>Clone Airbnb</h3>
+        </div>
+        <div class="grey-text">
+          <p></p>
+        </div>
+        <button class="see-more">
+          <p>Preview</p>
+        </button>
+        <button class="go-to-source">
+          <p>GitHub</p>
+        </button>
+      </div>
     </div>
-    <p></p>
+
+    <!-- Autre - LEFT -->
+    <div class="project-card-left">
+      <div class="img-left">
+        <img src="" alt="">
+      </div>
+      <div class="text-right">
+        <div class="big-text-white">
+          <p></p>
+        </div>
+        <div class="title-white">
+          <h3>Autre</h3>
+        </div>
+        <div class="grey-text">
+          <p></p>
+        </div>
+        <button class="see-more">
+          <p>Preview</p>
+        </button>
+        <button class="go-to-source">
+          <p>GitHub</p>
+        </button>
+      </div>
+    </div>
+
+    <!-- Notion Creator - RIGHT -->
+    <div class="project-card-right">
+      <div class="img-right">
+        <img src="" alt="">
+      </div>
+      <div class="text-left">
+        <div class="big-text-white">
+          <p></p>
+        </div>
+        <div class="title-white">
+          <h3>Notion Creator</h3>
+        </div>
+        <div class="grey-text">
+          <p></p>
+        </div>
+        <button class="see-more">
+          <p>Preview</p>
+        </button>
+        <button class="go-to-source">
+          <p>Notion</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="section white-section">
+      <div class="section-title">
+        <h2>My <strong>Testimonials</strong></h2>
+      </div>
+      <div class="flex">
+        <div class="card white-card">
+          <div class="avatar">
+            <img src="" alt="">
+          </div>
+          <p>Testimonial</p>
+          <p class="author">Michel</p>
+          <p class="role">Designer</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section black-section">
+      <div class="form left">
+
+      </div>
+      <div class="title-section">
+        Let's connect and work together
+      </div>
+      <p></p>
+    </div>
+
   </div>
 
-</div>
+
+  </main>
+
+  <footer class="section black-section flex">
+    <div class="avatar">
+      <img src="" alt="">
+    </div>
+    <div class="credits">
+      Created by <a href=""></a>
+      Design by <a href="https://www.figma.com/@jhanvishah">Jhanvi Shah</a>
+    </div>
+
+  </footer>
 
 <!-- Import your own javascript -->
 <script src="javascript/skills.js" type="module"></script>
-
-</main>
-
-<footer class="section black-section flex">
-  <div class="avatar">
-    <img src="" alt="">
-  </div>
-  <div class="credits">
-    Created by <a href=""></a>
-    Design by <a href="https://www.figma.com/@jhanvishah">Jhanvi Shah</a>
-  </div>
-
-</footer>
-
-
 </body>
 </html>
