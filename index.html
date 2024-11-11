@@ -36,22 +36,21 @@
   <nav class="flex content-center items-center justify-between px-6 py-3">
     <a href="#" class="nav-item font-bold">Caroline Cerbelaud</a>
     <div class="flex space-x-4 content-center items-center justify-center">
-      <a href="" class="nav-item">About me</a>
-      <a href="" class="nav-item">Skills</a>
-      <a href="" class="nav-item">Project</a>
-      <a href="" class="nav-item">Contact me</a>
+      <a href="#about-me" class="nav-item">About me</a>
+      <a href="#skills" class="nav-item">Skills</a>
+      <a href="#projects" class="nav-item">Project</a>
+      <a href="#contact-me" class="nav-item">Contact me</a>
     </div>
     <button class="button-black flex flex-row content-center items-center justify-center gap-2" >
-      <p>Download Resume</p>
+      <a href="#">Download Resume</a>
       <i class="fa-regular fa-circle-down"></i>
     </button>
   </nav>
 
-
-  <!-- Content -->
+  <!-- CONTENT -->
   <main>
 
-  <!-- Hero Banner -->
+  <!-- HERO BANNER -->
   <div class="section white-section p-3 flex flex-row">
     <div class="w-1/2">
         <div class="creative-title flex flex-col gap-4">
@@ -82,96 +81,63 @@
         </div>
     </div>
     <div class="w-1/2">
-      <img src="file:///Users/carolinecerbelaud/code/CaroCbd/profile/images/girl%20banner%201.png" alt="" class="hero-banner-right">
+      <img src="images/girl_with_laptop.png" alt="" class="hero-banner-right">
     </div>
   </div>
 
-  <!-- Skills -->
+  <!-- MY SKILLS -->
   <!-- https://icones.js.org/collection/devicon-plain -->
 
-  <div class="section white-section">
+  <div id="skills" class="section white-section">
     <div class="section-title">
       <h2>My <strong>Skills</strong></h2>
     </div>
     <!-- Vue.JS div -->
-    <div id="skills" v-for="skill in skills" class="skills-grid grid grid-cols-4 gap-4 justify-items-center content-center items-stretch place-content-stretch">
-        <div class="skill-card" v-cloak>
-          <!-- <img src="{{ skill.icon_path }}" alt="{{ skill.name }} logo"> -->
-          <p>{{ skill.name }}</p>
+    <div  class="grid grid-cols-6 gap-10 justify-between">
+     <div v-for="skill in skills">
+        <div class="skill-card">
+          <img v-bind:src="skill.icon_svg" alt="">
+          <div class="skill-name">{{ skill.name }}</div>
         </div>
-    </div>
-    <!-- <div id="skills" class="grid grid-cols-5 gap-20">
-      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
-        <i class="fa-brands fa-github"></i>
-        <p>GitHub</p>
-      </div>
-      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
-        <i class="fa-brands fa-github"></i>
-        <p>GitHub</p>
-      </div>
-      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
-        <i class="fa-brands fa-github"></i>
-        <p>GitHub</p>
-      </div>
-      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
-        <i class="fa-brands fa-github"></i>
-        <p>GitHub</p>
-      </div>
-      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
-        <i class="fa-brands fa-github"></i>
-        <p>GitHub</p>
-      </div>
-      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
-        <i class="fa-brands fa-github"></i>
-        <p>GitHub</p>
-      </div>
-      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
-        <i class="fa-brands fa-github"></i>
-        <p>GitHub</p>
-      </div>
-      <div class="skill-card flex flex-col gap-5 items-center	justify-center" v-cloak>
-        <i class="fa-brands fa-github"></i>
-        <p>GitHub</p>
       </div>
     </div>
- -->
   </div>
 
-  <!-- Experience -->
+  <!-- MY EXPERIENCES -->
 
-  <div class="section black-section">
+  <div id="experiences" class="section black-section">
     <div class="section-title">
       <h2>My <strong>Experiences</strong></h2>
     </div>
-    <!-- Vue.JS div -->
-    <!-- <div id="experiences" v-for="(experience) in experience"class="experience-list">
-            <div class="expe-card" v-cloak>
-              <img src="{{ expe.icon_path }}" alt="{{ expe.name }} logo">
-              <h2>{{ expe.job_title }}</h2>
-              <p>{{ expe.date_start }}</p>
-              <p>{{ expe.date_end }}</p>
-              <p>{{ expe.job_description }}</p>
-            </div>
-    </div> -->
-
-    <!-- Le Wagon Bootcamp -->
-    <div class="expe-card" v-cloak>
-      <img src=".images/lewagonlogo.png" alt="Le Wagon Bootcamp logo">
-      <h2><span>Le Wagon</span>Bootcamp Développeur fullstack </h2>
-      <p>Octobre 2024</p>
-      <p>Décembre 2024</p>
-      <p>Instensive 9 weeks of bootcamp to learn fullstack developement</p>
+    <div v-for="experience in experiences" class="experiences-cards-list">
+      <div class="expe-card">
+        <div class="expe-header">
+          <div class="expe-header-left">
+            <img v-bind:src="experience.job_logo" v-bind:alt="experience.name">
+            <h2>
+              <span>{{ experience.employer }}</span>
+              <span>{{ experience.job_title }}</span>
+            </h2>
+          </div>
+          <div class="expe-header-right">
+            <span>{{ experience.date_start }}</span>
+            <span>{{ experience.date_end }}</span>
+          </div>
+        </div>
+        <div class="expe-description">
+          <p>{{ experience.description_short }}</p>
+        </div>
+      </div>
     </div>
-  </div>
 
   <!-- About me -->
-  <div class="section white-section">
-    <div class="big-image">
-      <img src="" alt="">
+  <div id="about-me" class="section white-section flex flex-row">
+    <div class="big-image w-1/2">
+      <img src="images/girl_with_big_hands.svg" alt="">
     </div>
-    <div class="right-content">
+    <div class="right-content w-1/2">
       <div class="section-title">
-        <h2>About Me</h2>
+        <h2>About <strong>Me</strong></h2>
       </div>
       <div class="simple-text">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia alias odio vero dolorum corporis rerum! Aperiam fugit id, minus in debitis nulla voluptates modi cumque porro, fuga, facere quidem sed.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia alias odio vero dolorum corporis rerum! Aperiam fugit id,
@@ -182,7 +148,7 @@
   </div>
 
   <!-- My projects -->
-  <div class="section black-section">
+  <div id="projects" class="section black-section">
     <div class="section-title">
       <h2>My <strong>Projects</strong></h2>
     </div>
@@ -299,7 +265,7 @@
       </div>
     </div>
 
-    <div class="section black-section">
+    <div id="contact-me" class="section black-section">
       <div class="form left">
 
       </div>
@@ -325,7 +291,9 @@
 
   </footer>
 
-<!-- Import your own javascript -->
+<!-- Import javascript Vue.js Apps-->
 <script src="javascript/skills.js" type="module"></script>
+<script src="javascript/experiences.js" type="module"></script>
+
 </body>
 </html>

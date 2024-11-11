@@ -1,6 +1,6 @@
-div{
+/* div{
   border: 1px solid green;
-}
+} */
 
 .section {
   width: 100%;
@@ -22,6 +22,7 @@ div{
   font-size: 2em;
   text-align: center;
   font-weight: 300;
+  margin: 1em;
 }
 
 .section-title strong {
