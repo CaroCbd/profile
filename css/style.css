@@ -5,3 +5,8 @@
 @import url("components/font.css");
 @import url("components/icons.css");
 @import url("components/sections.css");
+@import url("components/texts.css");
+
+body{
+  font-family: Sora;
+}
